@@ -3,21 +3,21 @@ import User from './User';
 
 const ListUsers = () => {
   const { users, isLoading, error } = useSelector((store) => store.users);
+  if (error !== undefined) {
+    return <div>Something went wrong:{error}</div>;
+  }
+
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
+
   return (
-    <>
-      {error === undefined ? (
-        isLoading ? (
-          <div>loading...</div>
-        ) : (
-          <ul>
-            {users.map((user) => (
-              <User key={user.id} user={user} />
-            ))}
-          </ul>
-        )
-      ) : (
-        <div>{error}</div>
-      )}
-    </>
+    <ul>
+      {users.map((user) => (
+        <User key={user.id} user={user} />
+      ))}
+    </ul>
   );
 };
+
+export default ListUsers;
