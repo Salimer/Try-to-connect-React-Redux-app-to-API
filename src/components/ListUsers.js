@@ -4,7 +4,12 @@ import User from './User';
 const ListUsers = () => {
   const { users, isLoading, error } = useSelector((store) => store.users);
   if (error !== undefined) {
-    return <div>Something went wrong:{error}</div>;
+    return (
+      <div>
+        Something went wrong:
+        {error}
+      </div>
+    );
   }
 
   if (isLoading) {
