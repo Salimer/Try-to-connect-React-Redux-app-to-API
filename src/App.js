@@ -6,7 +6,7 @@ import ListUsers from './components/ListUsers';
 function App() {
   return (
     <Provider store={store}>
-      <ListUsers/>
+      <ListUsers />
     </Provider>
   );
 }
