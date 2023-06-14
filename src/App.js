@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import store from './Redux/store';
+import store from './store/store';
 import { Provider } from 'react-redux';
 
 function App() {
